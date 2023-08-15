@@ -53,8 +53,8 @@ class CalendarDetailView1 : AppCompatActivity() {
 
 
         // 프래그먼트를 레이아웃 컨테이너에 추가
-        fragmentTransaction.add(R.id.fragment_container, fragment1)
-        fragmentTransaction.add(R.id.fragment_container, fragment2)
+        fragmentTransaction.replace(R.id.fragment_container, fragment1)
+        fragmentTransaction.replace(R.id.fragment_container, fragment2)
 
         // 프래그먼트 트랜잭션 완료
         fragmentTransaction.commit()
@@ -91,6 +91,7 @@ class CalendarDetailView1 : AppCompatActivity() {
 
     private fun CalendarDetailView1Api(weatherId: Int) {
         val memoService = RetrofitImpl.authenticatedRetrofit.create(MemoService::class.java)
+
 
         val call = memoService.memoReturn(weatherId = weatherId)
 

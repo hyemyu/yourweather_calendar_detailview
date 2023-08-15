@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.widget.AppCompatImageButton
 import com.umc.yourweather.R
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,8 +47,9 @@ class ScrollviewFragment2 : Fragment() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var binding: FragmentScrollview2Binding
-    private lateinit var adapter: CalendarDetailviewDiaryAdapter
 
+    private lateinit var adapter: CalendarDetailviewDiaryAdapter
+    private var weatherId: Int = -1 // 기본값 설정
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -59,47 +61,35 @@ class ScrollviewFragment2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val button = view.findViewById<AppCompatImageButton>(R.id.btn_calendardetailview2_plus)
 
-        button.setOnClickListener {
-            val intent = Intent(activity, CalendarDetailviewModify1::class.java)
-            startActivity(intent)
-        }
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_scrollview1, container, false)
-        binding = FragmentScrollview2Binding.bind(rootView)
+        binding = FragmentScrollview2Binding.inflate(inflater, container, false)
 
+        val plusButton: ImageButton = binding.btnCalendardetailview2Plus
+
+        plusButton.setOnClickListener {
+            val intent = Intent(activity, CalendarDetailviewModify1::class.java)
+            startActivity(intent)
+        }
         val selectedDate = arguments?.getString("selectedDate")
         binding.tvScrollviewFragment21.text = selectedDate
 
-// Initialize the RecyclerView and its components
-        recyclerView = rootView.findViewById<RecyclerView>(R.id.rv_scrollview_fragment1_1)
-        viewManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
-
-
-        // Configure the RecyclerView
-        recyclerView.apply {
-            // Improve performance if the layout size of the RecyclerView doesn't change
-            setHasFixedSize(true)
-            // Use a linear layout manager
-            layoutManager = viewManager
-            // Specify an adapter
-            adapter = viewAdapter
-        }
 
         binding.btnCalendardetailview2Plus.setOnClickListener{
             val intent = Intent(requireContext(), CalendarDetailviewModify1::class.java)
             startActivity(intent)
         }
-        return rootView
+        return binding.root
+
+        ScrollviewFragment2Api(weatherId)
+
 
     }
-    private fun ScrollviewFragment1Api(weatherId: Int){
+    private fun ScrollviewFragment2Api(weatherId: Int){
         val memoService = RetrofitImpl.authenticatedRetrofit.create(MemoService::class.java)
         val call = memoService.memoReturn(weatherId = weatherId)
 
@@ -123,6 +113,19 @@ class ScrollviewFragment2 : Fragment() {
                             val content = firstMemoContent.status
                             // 여기에서 memoItem의 필드 값을 활용하여 작업 수행
                             viewAdapter = CalendarDetailviewDiaryAdapter(memoContentList)
+                            recyclerView = binding.rvScrollviewFragment21
+                            viewManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
+
+
+                            // Configure the RecyclerView
+                            recyclerView.apply {
+                                // Improve performance if the layout size of the RecyclerView doesn't change
+                                setHasFixedSize(true)
+                                // Use a linear layout manager
+                                layoutManager = viewManager
+                                // Specify an adapter
+                                adapter = viewAdapter
+                            }
 
                             val dateString = firstMemoContent.dateTime
                             val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US)
