@@ -31,7 +31,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv_calendar_detailview_modify2_8"
+                        android:id="@+id/tv_calendar_detailview_modify2_weather"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -47,32 +47,18 @@
                         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
                     <LinearLayout
+                        android:id="@+id/ll_CalendarDetailviewClickToSelectTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/tv_calendar_detailview_modify2_9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="51dp"
-                            android:layout_marginTop="18dp"
-                            android:layout_marginEnd="0dp"
-                            android:fontFamily="@font/pretendardregular"
-                            android:text="오후"
-                            android:textColor="#424242"
-                            android:textFontWeight="500"
-                            android:textSize="20sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_calendar_detailview_modify2_8" />
 
                         <TextView
-                            android:id="@+id/tv_calendar_detailview_modify2_10"
+                            android:id="@+id/tv_calendar_detailview_modify2_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="18dp"
-                            android:layout_marginEnd="0dp"
+                            android:layout_marginStart="50dp"
                             android:fontFamily="@font/pretendardsemibold"
                             android:text="12:00"
                             android:textColor="#424242"
@@ -187,7 +173,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv_calendar_detailview_modify2_4"
+                        android:id="@+id/tv_calendar_detailview_modify2_temp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -271,7 +257,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tv_calendar_detailview_modify2_7"
+                        android:id="@+id/tv_calendar_detailview_modify2_diary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
