@@ -20,7 +20,7 @@
             android:text=""
             android:textColor="#2B2B2B"
             android:textFontWeight="600"
-            android:textSize="20sp"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +57,7 @@
             android:textAlignment="center"
             android:textColor="#5E412F"
             android:textFontWeight="600"
-            android:textSize="20sp"
+            android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="@+id/divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -110,7 +110,7 @@
                         android:textAlignment="center"
                         android:textColor="#2B2B2B"
                         android:textFontWeight="600"
-                        android:textSize="14sp" />
+                        android:textSize="14dp" />
 
 
 
