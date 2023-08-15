@@ -2,6 +2,8 @@ package com.umc.yourweather.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.umc.yourweather.data.remote.response.MemoDailyResponse
+import retrofit2.Callback
 
 // 자동 로그인을 위한 SharedPreferences
 object UserSharedPreferences {

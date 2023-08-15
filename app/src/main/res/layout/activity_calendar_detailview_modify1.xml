@@ -7,7 +7,7 @@
     tools:context=".presentation.calendardetailview.CalendarDetailviewModify1">
 
     <FrameLayout
-        android:id="@+id/fragment_container"
+        android:id="@+id/fl_calendar_detilview_modify1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,6 +17,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_calendar_detilview_modify1_1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="120dp"
@@ -28,6 +29,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
+                    android:id="@+id/ll_calendar_detilview_modify1_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -55,7 +57,7 @@
                         android:orientation="horizontal">
 
                         <ImageButton
-                            android:id="@+id/btn_home_sun"
+                            android:id="@+id/btn_calendar_detailview_modify1_sun"
                             android:layout_width="83dp"
                             android:layout_height="85dp"
                             android:layout_marginStart="33dp"
@@ -69,7 +71,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/divider" />
 
                         <ImageButton
-                            android:id="@+id/btn_home_cloud"
+                            android:id="@+id/btn_calendar_detailview_modify1_cloud"
                             android:layout_width="83dp"
                             android:layout_height="85dp"
                             android:layout_marginStart="5dp"
@@ -81,7 +83,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/divider" />
 
                         <ImageButton
-                            android:id="@+id/btn_home_rain"
+                            android:id="@+id/btn_calendar_detailview_modify1_rain"
                             android:layout_width="83dp"
                             android:layout_height="85dp"
                             android:layout_marginStart="5dp"
@@ -93,7 +95,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/divider" />
 
                         <ImageButton
-                            android:id="@+id/btn_home_thunder"
+                            android:id="@+id/btn_calendar_detailview_modify1_thunder"
                             android:layout_width="83dp"
                             android:layout_height="85dp"
                             android:layout_marginStart="5dp"
@@ -234,7 +236,7 @@
                         app:layout_constraintVertical_bias="0.4" />
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cv_calendardetailview_modify1"
+                        android:id="@+id/cv_calendar_detailview_modify1"
                         android:layout_width="344dp"
                         android:layout_height="173dp"
                         android:layout_gravity="center"
@@ -257,7 +259,7 @@
                             android:padding="16dp">
 
                             <EditText
-                                android:id="@+id/editText_modify1"
+                                android:id="@+id/et_calendar_detailview_modify1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="textMultiLine"
